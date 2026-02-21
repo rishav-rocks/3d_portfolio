@@ -1,0 +1,33 @@
+/* wrapper keeps text hidden during slide */
+.btn-text-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1;
+}
+
+/* top visible text */
+.btn-text-top {
+  display: block;
+  transform: translateY(0%) skewY(0deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* hidden text below */
+.btn-text-bottom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  transform: translateY(160%) skewY(12deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* hover animation triggered by Tailwind "group" */
+.group:hover .btn-text-top {
+  transform: translateY(-160%) skewY(12deg);
+}
+
+.group:hover .btn-text-bottom {
+  transform: translateY(0%) skewY(0deg);
+}

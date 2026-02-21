@@ -1,0 +1,56 @@
+/* Loader overlay */
+.loader {
+    position: absolute;
+    inset: 0;
+    background: #f5f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+/* GSAP clip path perf hint */
+#video-frame {
+    will-change: clip-path, border-radius;
+}
+
+/* Mini preview — always centered, responsive sizing */
+.mini-preview-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 0.5rem;
+
+    /* Small screens — sit below text/button */
+    top: 65%;
+    width: 140px;
+    height: 140px;
+}
+
+/* Larger phones */
+@media (min-width: 480px) {
+    .mini-preview-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .mini-preview-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .mini-preview-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+}

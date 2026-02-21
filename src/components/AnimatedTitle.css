@@ -1,0 +1,12 @@
+/* container perspective for 3D feel */
+.animated-title {
+  perspective: 1000px;
+}
+
+/* initial state before GSAP animates */
+.animated-word {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0) rotateY(10deg) rotateX(10deg);
+  display: inline-block;
+  will-change: transform, opacity;
+}

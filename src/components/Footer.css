@@ -1,0 +1,82 @@
+/* Root */
+.footer-root {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: black;
+    background-color: #5542ff;
+}
+
+/* Layout */
+.footer-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+    }
+}
+
+/* Copyright text */
+.footer-copy {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .footer-copy {
+        text-align: left;
+    }
+}
+
+/* Social icons wrapper */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .footer-socials {
+        justify-content: flex-start;
+    }
+}
+
+/* Individual icon */
+.footer-icon {
+    color: black;
+    font-size: 20px;
+    transition: all 500ms ease-in-out;
+}
+
+.footer-icon:hover {
+    color: white;
+}
+
+/* Privacy link */
+.footer-policy {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+.footer-policy:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .footer-policy {
+        text-align: right;
+    }
+}

@@ -1,0 +1,51 @@
+/* Section pinned area */
+.clip-section {
+    height: 100dvh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animated mask container — starts small, GSAP expands it */
+.mask-clip-path.about-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-radius: 1.5rem;
+    will-change: width, height, border-radius, clip-path;
+
+    /* Initial size — GSAP animates to 100vw/100vh */
+    width: 24rem;
+    height: 60vh;
+    clip-path: polygon(14% 0, 72% 0, 88% 90%, 0 95%);
+}
+
+/* Responsive initial size */
+@media (min-width: 768px) {
+    .mask-clip-path.about-image {
+        width: 30vw;
+        height: 70vh;
+    }
+}
+
+/* About sub-text — override global styles from index.css */
+#about .about-subtext {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    max-width: 26rem;
+    font-family: "circular-web", sans-serif;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    #about .about-subtext {
+        max-width: 34rem;
+    }
+}
