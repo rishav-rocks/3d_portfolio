@@ -164,14 +164,14 @@ const ContactModal = ({ isOpen, onClose }) => {
           style={{ opacity: 0 }}
         >
           <a
-            href="mailto:hello@rishav.dev"
+            href="mailto:rishavrocks87@gmail.com"
             className="contact-social-icon"
             title="Email"
           >
             <FaEnvelope />
           </a>
           <a
-            href="tel:+910000000000"
+            href="tel:+918617421281"
             className="contact-social-icon"
             title="Call"
           >

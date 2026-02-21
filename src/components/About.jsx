@@ -57,9 +57,14 @@ const About = () => {
       <div id="clip" className="clip-section">
         <div className="mask-clip-path about-image">
           <img
+            src="/assets/img/me.png"
+            alt="About background mobile"
+            className="absolute left-0 top-0 w-full h-full object-cover md:hidden"
+          />
+          <img
             src="/assets/img/mine.png"
-            alt="About background"
-            className="absolute left-0 top-0 w-full h-full object-cover"
+            alt="About background desktop"
+            className="absolute left-0 top-0 w-full h-full object-cover hidden md:block"
           />
         </div>
       </div>
