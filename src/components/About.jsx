@@ -29,7 +29,7 @@ const About = () => {
   });
 
   return (
-    <section id="about" className="w-screen min-h-screen bg-blue-50 text-black">
+    <section id="about" className="w-full min-h-screen bg-blue-50 text-black">
       {/* Top Content */}
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5 px-4 text-center">
         <p className="font-general text-xs uppercase tracking-widest">

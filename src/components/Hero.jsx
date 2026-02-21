@@ -80,7 +80,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative h-dvh w-screen overflow-hidden bg-blue-50"
+      className="relative h-dvh w-full overflow-hidden bg-blue-50"
     >
       {/* Loader */}
       {loading && (
