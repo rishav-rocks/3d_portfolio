@@ -94,16 +94,14 @@ const Hero = () => {
       )}
 
       {/* Video Frame */}
-      <div
-        id="video-frame"
-        className="relative h-full w-full overflow-hidden rounded-lg"
-      >
+      <div id="video-frame" className="relative h-full w-full overflow-hidden">
         {/* Background Video */}
         <video
           src={getVideoSrc(currentIndex)}
           autoPlay
           loop
           muted
+          playsInline
           className="absolute inset-0 size-full object-cover"
           onLoadedData={handleVideoLoad}
         />
@@ -114,6 +112,7 @@ const Hero = () => {
           src={getVideoSrc((currentIndex % totalVideos) + 1)}
           loop
           muted
+          playsInline
           id="next-video"
           className="absolute-center z-10 invisible"
           style={{ width: "260px", height: "260px", objectFit: "cover" }}
@@ -132,6 +131,7 @@ const Hero = () => {
                 src={getVideoSrc((currentIndex % totalVideos) + 1)}
                 loop
                 muted
+                playsInline
                 id="current-video"
                 className={`size-full scale-150 object-cover transition-opacity duration-500 ${
                   isHovering ? "opacity-100" : "opacity-0"
