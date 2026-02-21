@@ -7,7 +7,7 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Button from "./Button";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItems = ["About", "Projects", "Journey", "Skills", "Contact"];
 
 const NavBar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -74,7 +74,7 @@ const NavBar = () => {
 
             <Button
               id="product-button"
-              title="Products"
+              title="Hire Me"
               rightIcon={<TiLocationArrow />}
               containerClass="hidden md:flex items-center gap-1 bg-blue-50"
             />

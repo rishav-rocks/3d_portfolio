@@ -1,18 +1,18 @@
 import "./Footer.css";
-import { FaDiscord, FaTwitter, FaYoutube, FaMedium } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
-  { href: "https://discord.com", icon: <FaDiscord /> },
-  { href: "https://twitter.com", icon: <FaTwitter /> },
-  { href: "https://youtube.com", icon: <FaYoutube /> },
-  { href: "https://medium.com", icon: <FaMedium /> },
+  { href: "https://github.com/rishav-rocks", icon: <FaGithub /> },
+  { href: "https://linkedin.com/in/", icon: <FaLinkedin /> },
+  { href: "https://twitter.com/", icon: <FaTwitter /> },
+  { href: "mailto:hello@rishav.dev", icon: <FaEnvelope /> },
 ];
 
 const Footer = () => {
   return (
     <footer className="footer-root">
       <div className="footer-container">
-        <p className="footer-copy">©Nova 2024. All rights reserved</p>
+        <p className="footer-copy">©Rishav 2026. All rights reserved</p>
 
         <div className="footer-socials">
           {socialLinks.map((link, index) => (

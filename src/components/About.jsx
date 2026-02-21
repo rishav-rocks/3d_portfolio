@@ -33,21 +33,22 @@ const About = () => {
       {/* Top Content */}
       <div className="relative mt-36 mb-8 flex flex-col items-center gap-5 px-4 text-center">
         <p className="font-general text-xs uppercase tracking-widest">
-          Welcome to Zentry
+          About Me
         </p>
 
         <AnimatedTitle
-          title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
+          title="Passi<b>o</b>nate about <br /> crafting digital <br /> exp<b>e</b>riences"
           containerClass="mt-5 text-black"
         />
 
         <div className="about-subtext text-center">
           <p className="mb-2">
-            The Game of Games begins—your life, now an epic MMORPG
+            I'm a Full Stack Developer who loves building immersive web
+            experiences
           </p>
           <p className="text-gray-500">
-            Zentry unites every player from countless games and platforms, both
-            digital and physical, into a unified Play Economy
+            With a passion for modern frameworks, interactive animations, and
+            clean code — I bring creative ideas to life through technology
           </p>
         </div>
       </div>

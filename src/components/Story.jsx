@@ -57,12 +57,12 @@ const FloatingImage = () => {
     >
       <div className="flex flex-col items-center py-10 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
-          the multiversal ip world
+          my journey
         </p>
 
         <div className="relative w-full">
           <AnimatedTitle
-            title="the st<b>o</b>ry of <br /> a hidden real<b>m</b>"
+            title="the j<b>o</b>urney of <br /> a creative m<b>i</b>nd"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
 
@@ -113,14 +113,14 @@ const FloatingImage = () => {
         <div className="relative z-20 -mt-32 flex w-full justify-center px-4 md:-mt-64 md:me-44 md:justify-end">
           <div className="flex flex-col items-center md:items-start">
             <p className="mt-3 max-w-sm text-center font-circular-web md:text-start text-violet-300">
-              Where realms converge, lies Zentry and the boundless pillar.
-              Discover its secrets and shape your fate amidst infinite
-              opportunities.
+              From curiosity to code — I've been on a relentless journey of
+              learning, building, and pushing the boundaries of what's possible
+              on the web.
             </p>
 
             <Button
               id="realm-btn"
-              title="discover prologue"
+              title="download resume"
               containerClass="mt-5"
             />
           </div>

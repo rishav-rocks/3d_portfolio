@@ -1,6 +1,10 @@
 import "./Features.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 /* ================= BENTO TILT ================= */
 
@@ -106,7 +110,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
               }}
             />
             <TiLocationArrow className="relative z-20" />
-            <p className="relative z-20">Coming Soon</p>
+            <p className="relative z-20">View Live</p>
           </div>
         )}
       </div>
@@ -116,91 +120,116 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 
 /* ================= FEATURES SECTION ================= */
 
-const Features = () => (
-  <section className="features-section">
-    <div className="container mx-auto px-3 md:px-10">
-      <div className="px-5 py-32">
-        <p className="section-subtitle">Into the Metagame Layer</p>
-        <p className="section-description">
-          Immerse yourself in a rich and ever-expanding universe where a vibrant
-          array of products converge into an interconnected overlay experience.
-        </p>
+const Features = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = sectionRef.current.querySelectorAll(".bento-tilt");
+      gsap.from(cards, {
+        y: 80,
+        opacity: 0,
+        rotateX: 8,
+        stagger: 0.15,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="features-section">
+      <div className="container mx-auto px-3 md:px-10">
+        <div className="px-5 py-32">
+          <p className="section-subtitle">Featured Projects</p>
+          <p className="section-description">
+            A curated collection of projects that showcase my passion for
+            interactive design, creative coding, and meaningful user
+            experiences.
+          </p>
+        </div>
+
+        <BentoTilt className="border-hsla mb-7 h-96 w-full md:h-[65vh]">
+          <BentoCard
+            src="/assets/videos/feature-1.mp4"
+            title={
+              <>
+                portf<b>o</b>lio
+              </>
+            }
+            description="This stunning 3D portfolio built with React, GSAP, and Tailwind — featuring scroll-driven animations and interactive effects."
+            isComingSoon
+          />
+        </BentoTilt>
+
+        <div className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-7 md:h-[135vh]">
+          <BentoTilt className="bento-tilt_1 h-96 md:h-auto row-span-1 md:row-span-2">
+            <BentoCard
+              src="/assets/videos/feature-2.mp4"
+              title={
+                <>
+                  ap<b>p</b>s
+                </>
+              }
+              description="Modern full-stack web applications with seamless user experiences and real-time features."
+              isComingSoon
+            />
+          </BentoTilt>
+
+          <BentoTilt className="bento-tilt_1 h-96 md:h-auto row-span-1">
+            <BentoCard
+              src="/assets/videos/feature-3.mp4"
+              title={
+                <>
+                  d<b>e</b>sign
+                </>
+              }
+              description="UI/UX designs that blend aesthetics with functionality for memorable experiences."
+              isComingSoon
+            />
+          </BentoTilt>
+
+          <BentoTilt className="bento-tilt_1 h-96 md:h-auto">
+            <BentoCard
+              src="/assets/videos/feature-4.mp4"
+              title={
+                <>
+                  t<b>o</b>ols
+                </>
+              }
+              description="Developer tools and open-source contributions that solve real problems."
+              isComingSoon
+            />
+          </BentoTilt>
+
+          <BentoTilt className="bento-tilt_2 h-60 md:h-auto">
+            <div className="more-coming">
+              <h1 className="bento-title special-font text-black">
+                M<b>o</b>re pr<b>o</b>jects s<b>o</b>on.
+              </h1>
+              <TiLocationArrow className="big-arrow" />
+            </div>
+          </BentoTilt>
+
+          <BentoTilt className="bento-tilt_2 h-60 md:h-auto">
+            <video
+              src="/assets/videos/feature-5.mp4"
+              loop
+              muted
+              autoPlay
+              className="size-full object-cover object-center"
+            />
+          </BentoTilt>
+        </div>
       </div>
-
-      <BentoTilt className="border-hsla mb-7 h-96 w-full md:h-[65vh]">
-        <BentoCard
-          src="/assets/videos/feature-1.mp4"
-          title={
-            <>
-              radia<b>n</b>t
-            </>
-          }
-          description="A cross-platform metagame app turning activities into a rewarding adventure."
-          isComingSoon
-        />
-      </BentoTilt>
-
-      <div className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-7 md:h-[135vh]">
-        <BentoTilt className="bento-tilt_1 h-96 md:h-auto row-span-1 md:row-span-2">
-          <BentoCard
-            src="/assets/videos/feature-2.mp4"
-            title={
-              <>
-                zig<b>m</b>a
-              </>
-            }
-            description="An anime-inspired NFT collection primed for expansion."
-            isComingSoon
-          />
-        </BentoTilt>
-
-        <BentoTilt className="bento-tilt_1 h-96 md:h-auto row-span-1">
-          <BentoCard
-            src="/assets/videos/feature-3.mp4"
-            title={
-              <>
-                n<b>e</b>xus
-              </>
-            }
-            description="A gamified social hub for Web3 communities."
-            isComingSoon
-          />
-        </BentoTilt>
-
-        <BentoTilt className="bento-tilt_1 h-96 md:h-auto">
-          <BentoCard
-            src="/assets/videos/feature-4.mp4"
-            title={
-              <>
-                az<b>u</b>l
-              </>
-            }
-            description="A cross-world AI agent enhancing gameplay."
-            isComingSoon
-          />
-        </BentoTilt>
-
-        <BentoTilt className="bento-tilt_2 h-60 md:h-auto">
-          <div className="more-coming">
-            <h1 className="bento-title special-font text-black">
-              M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
-            </h1>
-            <TiLocationArrow className="big-arrow" />
-          </div>
-        </BentoTilt>
-
-        <BentoTilt className="bento-tilt_2 h-60 md:h-auto">
-          <video
-            src="/assets/videos/feature-5.mp4"
-            loop
-            muted
-            autoPlay
-            className="size-full object-cover object-center"
-          />
-        </BentoTilt>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Features;

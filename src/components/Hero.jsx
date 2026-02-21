@@ -144,16 +144,16 @@ const Hero = () => {
 
         {/* Text Content */}
         <div className="absolute left-[5%] top-[20%] z-40 text-blue-75">
-          <h1 className="hero-heading">
-            redefi<b>n</b>e
+          <h1 className="hero-heading hero-gradient-text">
+            I cr<b>e</b>ate
           </h1>
           <p className="mt-4 mb-6 max-w-md font-robert-regular leading-relaxed">
-            Enter the Metagame Layer <br />
-            Unleash the Play Economy
+            Full Stack Developer & Creative Coder <br />
+            Building digital experiences that inspire
           </p>
           <Button
-            id="watch-trailer"
-            title="Watch trailer"
+            id="view-projects"
+            title="View Projects"
             leftIcon={<TiLocationArrow />}
             containerClass="bg-yellow-300 flex-center gap-1"
           />
@@ -161,8 +161,8 @@ const Hero = () => {
       </div>
 
       {/* Bottom heading — outside video-frame so it's visible behind the clip-path on scroll */}
-      <h1 className="hero-heading absolute bottom-5 right-5 text-black">
-        G<b>A</b>MING
+      <h1 className="hero-heading hero-gradient-text absolute bottom-5 right-5">
+        RISH<b>A</b>V
       </h1>
     </section>
   );
