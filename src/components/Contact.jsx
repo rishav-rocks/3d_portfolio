@@ -1,6 +1,8 @@
 import "./Contact.css";
+import { useState } from "react";
 import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
+import ContactModal from "./ContactModal";
 
 const ImageClipBox = ({ src, clipClass }) => (
   <div className={clipClass}>
@@ -13,6 +15,8 @@ const ImageClipBox = ({ src, clipClass }) => (
 );
 
 const Contact = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section id="contact" className="my-20 min-h-96 w-full px-6 md:px-10">
       <div className="relative min-h-[23rem] rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
@@ -53,9 +57,17 @@ const Contact = () => {
             containerClass="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !font-black !leading-[.9]"
           />
 
-          <Button title="say hello" containerClass="mt-10 cursor-pointer" />
+          <div onClick={() => setIsModalOpen(true)}>
+            <Button title="say hello" containerClass="mt-10 cursor-pointer" />
+          </div>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 };

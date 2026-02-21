@@ -1,0 +1,306 @@
+/* ============ OVERLAY ============ */
+.contact-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.contact-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============ MODAL CONTAINER ============ */
+.contact-modal {
+    position: relative;
+    width: 92%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 1.5rem;
+    background: linear-gradient(145deg, #0a0a1a 0%, #12122a 50%, #0d0d20 100%);
+    border: 1px solid rgba(87, 36, 255, 0.2);
+    box-shadow:
+        0 0 60px rgba(87, 36, 255, 0.15),
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    padding: 2.5rem 2rem;
+    transform: scale(0.8) translateY(40px);
+    opacity: 0;
+}
+
+.contact-modal-overlay.active .contact-modal {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+}
+
+/* ============ CLOSE BUTTON ============ */
+.contact-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.contact-modal-close:hover {
+    background: rgba(87, 36, 255, 0.3);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+/* ============ HEADER ============ */
+.contact-modal-subtitle {
+    font-family: "General Sans", sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #5724ff;
+    margin-bottom: 0.5rem;
+}
+
+.contact-modal-title {
+    font-family: "zentry", sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.contact-modal-title b {
+    color: #edff66;
+}
+
+/* ============ FORM ============ */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-family: "General Sans", sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.4rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    font-family: "General Sans", sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #5724ff;
+    background: rgba(87, 36, 255, 0.05);
+    box-shadow: 0 0 20px rgba(87, 36, 255, 0.1);
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ============ SUBMIT BUTTON ============ */
+.contact-submit {
+    position: relative;
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #5724ff 0%, #7c4dff 100%);
+    color: #fff;
+    font-family: "General Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.contact-submit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #edff66 0%, #b8cc52 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(87, 36, 255, 0.4);
+}
+
+.contact-submit:hover::before {
+    opacity: 1;
+}
+
+.contact-submit span {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-submit:hover span {
+    color: #0a0a1a;
+}
+
+/* ============ DIVIDER ============ */
+.contact-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.2rem 0;
+}
+
+.contact-divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-divider-text {
+    font-family: "General Sans", sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* ============ SOCIAL ICONS ============ */
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact-social-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-social-icon:hover {
+    border-color: #5724ff;
+    background: rgba(87, 36, 255, 0.15);
+    color: #edff66;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(87, 36, 255, 0.2);
+}
+
+/* ============ GLOW ORBS ANIMATION ============ */
+.modal-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.modal-glow-1 {
+    width: 200px;
+    height: 200px;
+    background: #5724ff;
+    top: -50px;
+    right: -50px;
+}
+
+.modal-glow-2 {
+    width: 150px;
+    height: 150px;
+    background: #edff66;
+    bottom: -30px;
+    left: -30px;
+}
+
+/* ============ FLOATING PARTICLES ============ */
+@keyframes float-particle {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+.modal-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #5724ff;
+    pointer-events: none;
+    animation: float-particle 3s ease-in-out infinite;
+}
+
+.modal-particle:nth-child(2) {
+    animation-delay: 0.5s;
+    background: #edff66;
+}
+
+.modal-particle:nth-child(3) {
+    animation-delay: 1s;
+    background: #4FB7DD;
+}
