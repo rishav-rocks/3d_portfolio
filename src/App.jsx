@@ -10,7 +10,7 @@ import Features from "./components/Features";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
+import { Analytics } from '@vercel/analytics/react';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
       <Story />
       <Contact />
       <Footer />
+      <Analytics />
     </main>
   );
 }
