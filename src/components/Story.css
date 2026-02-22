@@ -10,7 +10,7 @@
 
 /* ORGANIC MASK SHAPE */
 .story-img-mask {
-    width: min(900px, 90vw);
+    width: min(900px, 95%);
     aspect-ratio: 4/5;
     filter: url(#flt_tag);
     overflow: hidden;

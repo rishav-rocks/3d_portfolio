@@ -1,7 +1,7 @@
 /* Section pinned area */
 .clip-section {
     height: 100dvh;
-    width: 100vw;
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
