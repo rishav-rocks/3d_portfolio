@@ -43,7 +43,14 @@ const Hero = () => {
           height: "100%",
           duration: 1,
           ease: "power1.inOut",
-          onStart: () => nextVdRef.current.play(),
+          onStart: () => {
+            const playPromise = nextVdRef.current.play();
+            if (playPromise !== undefined) {
+              playPromise.catch((error) => {
+                console.log("Video play interrupted or failed:", error);
+              });
+            }
+          },
         });
 
         gsap.from("#current-video", {
@@ -102,6 +109,7 @@ const Hero = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute inset-0 size-full object-cover"
           onLoadedData={handleVideoLoad}
         />
@@ -113,6 +121,7 @@ const Hero = () => {
           loop
           muted
           playsInline
+          preload="metadata"
           id="next-video"
           className="absolute-center z-10 invisible"
           style={{ width: "260px", height: "260px", objectFit: "cover" }}
@@ -132,6 +141,7 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 id="current-video"
                 className={`size-full scale-150 object-cover transition-opacity duration-500 ${
                   isHovering ? "opacity-100" : "opacity-0"
