@@ -14,43 +14,175 @@
     will-change: clip-path, border-radius;
 }
 
-/* Mini preview — always centered, responsive sizing */
-.mini-preview-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 50;
-    cursor: pointer;
+/* ======================================================
+   TERMINAL / CODE EDITOR CARD
+   ====================================================== */
+
+.terminal-card {
+    max-width: 520px;
+    border-radius: 12px;
     overflow: hidden;
-    border-radius: 0.5rem;
-
-    /* Small screens — sit below text/button */
-    top: 65%;
-    width: 140px;
-    height: 140px;
+    background: rgba(15, 15, 30, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 0 60px rgba(87, 36, 255, 0.08);
+    font-family: "SF Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
 }
 
-/* Larger phones */
-@media (min-width: 480px) {
-    .mini-preview-wrapper {
-        width: 200px;
-        height: 200px;
+/* Title bar */
+.terminal-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red {
+    background: #ff5f57;
+}
+
+.dot-yellow {
+    background: #ffbd2e;
+}
+
+.dot-green {
+    background: #28c840;
+}
+
+.terminal-title {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+}
+
+/* Terminal body */
+.terminal-body {
+    padding: 18px 20px;
+}
+
+/* Story progress bar */
+.story-progress {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.story-progress-dot {
+    font-size: 0.65rem;
+    font-family: "SF Mono", "Fira Code", monospace;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.story-progress-dot:hover {
+    border-color: rgba(237, 255, 102, 0.3);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.story-progress-dot.active {
+    background: rgba(87, 36, 255, 0.25);
+    border-color: rgba(87, 36, 255, 0.5);
+    color: #edff66;
+    box-shadow: 0 0 12px rgba(87, 36, 255, 0.15);
+}
+
+/* Terminal content lines */
+.terminal-content {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.terminal-prompt {
+    color: #28c840;
+    font-size: 0.85rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.terminal-prompt.output-arrow {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.terminal-heading {
+    color: #edff66;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.terminal-output {
+    margin-top: 4px;
+}
+
+.terminal-typed-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    font-family: "robert-regular", sans-serif;
+}
+
+/* Typing cursor animation */
+.typing-cursor {
+    margin-left: 2px;
+    font-weight: 100;
+    color: #edff66;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
     }
 }
 
-/* Tablet and up */
-@media (min-width: 768px) {
-    .mini-preview-wrapper {
-        width: 260px;
-        height: 260px;
-    }
-}
+/* ======================================================
+   RESPONSIVE ADJUSTMENTS
+   ====================================================== */
 
-/* Desktop */
-@media (min-width: 1024px) {
-    .mini-preview-wrapper {
-        width: 320px;
-        height: 320px;
+@media (max-width: 640px) {
+    .terminal-card {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .terminal-heading {
+        font-size: 0.95rem;
+    }
+
+    .terminal-typed-text {
+        font-size: 0.78rem;
     }
 }
