@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -30,6 +30,7 @@ function App() {
   }, []);
 
   return (
+    <Router>
     <main className="relative min-h-screen w-full overflow-x-hidden">
       {/* Scroll progress bar */}
       <div
@@ -39,6 +40,9 @@ function App() {
       />
       <NavBar />
       <Hero />
+      
+        
+        
       <About />
       <Features />
       <Story />
@@ -46,6 +50,7 @@ function App() {
       <Footer />
       <Analytics />
     </main>
+    </Router>
   );
 }
 export default App;

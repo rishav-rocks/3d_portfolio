@@ -173,7 +173,7 @@ const Features = () => {
         <div className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-7 md:h-[135vh]">
           <BentoTilt className="bento-tilt_1 h-96 md:h-auto row-span-1 md:row-span-2">
             <BentoCard
-              src="/assets/videos/feature-2.mp4"
+              src="/assets/videos/apps.webm"
               title={
                 <>
                   ap<b>p</b>s
@@ -186,7 +186,7 @@ const Features = () => {
 
           <BentoTilt className="bento-tilt_1 h-96 md:h-auto row-span-1">
             <BentoCard
-              src="/assets/videos/feature-3.mp4"
+              src="/assets/videos/design.webm"
               title={
                 <>
                   d<b>e</b>sign
@@ -199,7 +199,7 @@ const Features = () => {
 
           <BentoTilt className="bento-tilt_1 h-96 md:h-auto">
             <BentoCard
-              src="/assets/videos/feature-4.mp4"
+              src="/assets/videos/tools.webm"
               title={
                 <>
                   t<b>o</b>ols

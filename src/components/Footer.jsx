@@ -3,9 +3,9 @@ import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
   { href: "https://github.com/rishav-rocks", icon: <FaGithub /> },
-  { href: "https://linkedin.com/in/", icon: <FaLinkedin /> },
+  { href: "https://www.linkedin.com/in/rishavkarmakar/", icon: <FaLinkedin /> },
   { href: "https://twitter.com/", icon: <FaTwitter /> },
-  { href: "mailto:hello@rishav.dev", icon: <FaEnvelope /> },
+  { href: "mailto:rishavrocks87@gmail.com", icon: <FaEnvelope /> },
 ];
 
 const Footer = () => {
