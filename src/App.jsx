@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,7 +9,7 @@ import Features from "./components/Features";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
   }, []);
 
   return (
-    <Router>
     <main className="relative min-h-screen w-full overflow-x-hidden">
       {/* Scroll progress bar */}
       <div
@@ -40,9 +38,6 @@ function App() {
       />
       <NavBar />
       <Hero />
-      
-        
-        
       <About />
       <Features />
       <Story />
@@ -50,7 +45,6 @@ function App() {
       <Footer />
       <Analytics />
     </main>
-    </Router>
   );
 }
 export default App;
